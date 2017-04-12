@@ -17,7 +17,7 @@
       <el-input type='textarea' v-model="data.fhdz" placeholder=''></el-input>
     </el-form-item>
     <el-form-item>
-      <el-button type="primary" @click='save("info")'>{{data.id ? '修改' : '添加'}}</el-button>
+      <el-button type="primary" @click='save("data")'>{{data.id ? '修改' : '添加'}}</el-button>
       <el-button type="default" @click='reset("info")'>重置</el-button>
     </el-form-item>
   </el-form>

@@ -40,13 +40,23 @@ module.exports = {
   },
   methods: {
     save(data) {
-      this.$refs[data].validate((valid) => {
-        if (valid) {
-            this.$$save(this[data], data => {
-            this.$router.push('/manage/contact/list');
-          });
-        }
-      });
+      //this.$refs[data].validate((valid) => {
+      //if (valid) {
+      let cdata = {
+        'contact': this[data]
+      };
+      console.log(this[data].id)
+      if (!this[data].id) {
+        this.$$save(cdata, data => {
+          this.$router.push('/manage/contact/list');
+        });
+      } else {
+        this.$$update(cdata, data => {
+          this.$router.push('/manage/contact/list');
+        });
+      }
+      //  }
+      //});
     },
     reset(formdata) {
       this.$refs[formdata].resetFields();

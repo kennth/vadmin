@@ -200,7 +200,16 @@ module.exports = {
  		 * @param {function} fn   成功回调
  		 */
  		save(data, fn) {
- 			ajax.call(this, 'put', '/contact', data, fn);
+ 			ajax.call(this, 'post', '/contact', data, fn, true);
+ 		},
+
+		/**
+ 		 * update公用接口
+ 		 * @param {object}   data 参数
+ 		 * @param {function} fn   成功回调
+ 		 */
+ 		update(data, fn) {
+ 			ajax.call(this, 'put', '/contact', data, fn, true);
  		},
 
  		/**
