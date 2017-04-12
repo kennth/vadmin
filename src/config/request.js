@@ -30,7 +30,9 @@ module.exports = {
 		 * @param  	{Function} 	fn   			成功回的回调
 		 */
 		selectUser(data, fn) {
-			ajax.call(this, 'get', '/User/selectUser', data, fn);
+			//ajax.call(this, 'get', '/User/selectUser', data, fn);
+			//ajax.call(this, 'get', '/users', data, fn);
+			ajax.call(this, 'post', '/users/page', {'pageNumber':1,'pageSize':20}, fn);
 		},
 
 		/**
@@ -65,8 +67,7 @@ module.exports = {
 		 * @param  {Function} fn 成功回调
 		 */
 		findUser(id, fn) {
-			ajax.call(this, 'get', '/User/findUser', {
-				id: id
+			ajax.call(this, 'get', '/users/'+id, {
 			}, fn);
 		},
 
@@ -170,6 +171,57 @@ module.exports = {
 		saveOrder(data, fn) {
 			ajax.call(this, 'post', '/Order/saveOrder', data, fn);
 		},
+	},
+
+	/**
+	 * 通讯录管理
+	 * @type {Object}
+	 */
+	contact: {
+		/**
+		 * 统计订单
+		 * @param  {object}   data 参数
+		 * @param  {Function} fn   成功回调
+		 */
+		 /**
+ 		 * 获取列表
+ 		 * @param  	{object}   	data 			参数
+ 		 * @param  	{Function} 	fn   			成功回的回调
+ 		 */
+ 		select(data, fn) {
+ 			//ajax.call(this, 'get', '/User/selectUser', data, fn);
+ 			//ajax.call(this, 'get', '/users', data, fn);
+ 			ajax.call(this, 'post', '/contact/page', {'pageNumber':1,'pageSize':20}, fn);
+ 		},
+
+ 		/**
+ 		 * 添加修改用户公用接口
+ 		 * @param {object}   data 参数
+ 		 * @param {function} fn   成功回调
+ 		 */
+ 		save(data, fn) {
+ 			ajax.call(this, 'put', '/contact', data, fn);
+ 		},
+
+ 		/**
+ 		 * 删除用户
+ 		 * @param  {object}   data 参数
+ 		 * @param {string} data.id 需要删除的ID，批量删除时，值为以逗号分开的ID字符串
+ 		 * @param  {Function} fn   成功回调
+ 		 */
+ 		delete(data, fn) {
+ 			ajax.call(this, 'delete', '/contact/'+data.id, data, fn);
+ 		},
+
+ 		/**
+ 		 * 获取用户信息
+ 		 * @param  {string}   id ID
+ 		 * @param  {Function} fn 成功回调
+ 		 */
+ 		find(id, fn) {
+ 			ajax.call(this, 'get', '/contact/'+id, {
+ 			}, fn);
+ 		},
 	},
 
 	/**

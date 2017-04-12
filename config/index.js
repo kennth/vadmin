@@ -23,7 +23,7 @@ module.exports = {
         assetsPublicPath: '/',
         proxyTable: {
             '/slsAdminApi': {
-                target: 'http://slsadmin.api.sailengsi.com',
+                target: 'http://localhost',
                 changeOrigin: true,
                 pathRewrite: {
                     '^/slsAdminApi': ''

@@ -27,6 +27,8 @@
 
         },
         created(){
+            console.log(this.$route)
+            console.log(this.$route.matched)
             if (this.$route.matched.length) {
                 var name=this.$route.matched[this.$route.matched.length-1].name;
                 this.strong=this.getPageText(name);
