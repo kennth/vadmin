@@ -44,8 +44,7 @@ module.exports = {
       //if (valid) {
       let cdata = {
         'contact': this[data]
-      };
-      console.log(this[data].id)
+      }
       if (!this[data].id) {
         this.$$save(cdata, data => {
           this.$router.push('/manage/contact/list');

@@ -19,7 +19,7 @@ module.exports = {
 		 * @param {function} fn 成功回调
 		 */
 		login(data, fn, errFn) {
-			ajax.call(this, 'post', '/Login/login', data, fn, true, errFn);
+			ajax.call(this, 'post', '/user/login', data, fn, true, errFn);
 		},
 
 		/**
@@ -32,7 +32,7 @@ module.exports = {
 		selectUser(data, fn) {
 			//ajax.call(this, 'get', '/User/selectUser', data, fn);
 			//ajax.call(this, 'get', '/users', data, fn);
-			ajax.call(this, 'post', '/users/page', {'pageNumber':1,'pageSize':20}, fn);
+			ajax.call(this, 'post', '/user/page', {'pageNumber':1,'pageSize':20}, fn);
 		},
 
 		/**
@@ -48,7 +48,7 @@ module.exports = {
 		 * @param {function} fn   成功回调
 		 */
 		saveUser(data, fn) {
-			ajax.call(this, 'post', '/User/saveUser', data, fn);
+			ajax.call(this, 'post', '/user/saveUser', data, fn);
 		},
 
 		/**
@@ -58,7 +58,7 @@ module.exports = {
 		 * @param  {Function} fn   成功回调
 		 */
 		deleteUser(data, fn) {
-			ajax.call(this, 'post', '/User/deleteUser', data, fn);
+			ajax.call(this, 'post', '/user/deleteUser', data, fn);
 		},
 
 		/**
@@ -67,7 +67,7 @@ module.exports = {
 		 * @param  {Function} fn 成功回调
 		 */
 		findUser(id, fn) {
-			ajax.call(this, 'get', '/users/'+id, {
+			ajax.call(this, 'get', '/user/'+id, {
 			}, fn);
 		},
 
@@ -81,7 +81,7 @@ module.exports = {
 		 * @param  {Function} fn   成功回调
 		 */
 		updPass(data, fn) {
-			ajax.call(this, 'post', '/User/updatePass', data, fn);
+			ajax.call(this, 'post', '/user/updatePass', data, fn);
 		},
 
 		/**
@@ -93,7 +93,7 @@ module.exports = {
 		 * @param  {Function} fn   成功回调
 		 */
 		accessUser(data, fn) {
-			ajax.call(this, 'post', '/User/accessUser', data, fn);
+			ajax.call(this, 'post', '/user/accessUser', data, fn);
 		}
 	},
 
@@ -178,11 +178,7 @@ module.exports = {
 	 * @type {Object}
 	 */
 	contact: {
-		/**
-		 * 统计订单
-		 * @param  {object}   data 参数
-		 * @param  {Function} fn   成功回调
-		 */
+		
 		 /**
  		 * 获取列表
  		 * @param  	{object}   	data 			参数

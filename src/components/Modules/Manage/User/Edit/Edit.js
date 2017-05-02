@@ -1,5 +1,5 @@
 module.exports = {
-    name: 'user',
+    name: 'edit',
     data() {
         return {
             user_data: {

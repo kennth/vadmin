@@ -78,7 +78,7 @@ module.exports = {
                             userinfo: data.userinfo
                         }).then(() => {
                             this.login_actions.disabled = false;
-                            this.$router.push('/Function/Open/Echarts');
+                            this.$router.push('/manage/order/list');
                         });
                     }, () => {
                         this.login_actions.disabled = false;
